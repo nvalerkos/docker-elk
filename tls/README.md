@@ -77,6 +77,7 @@ Archive:  tls/elasticsearch-ssl-http.zip
 $ sudo rm tls/elasticsearch-ssl-http.zip
 ```
 
+
 ```
 tls
 ├── ca
@@ -91,4 +92,19 @@ tls
     ├── README.txt
     ├── elasticsearch-ca.pem
     └── sample-kibana.yml
+```
+
+
+## Change your directory permissions back to your user, had issues accessing the files.
+```console
+$ sudo chown -R $(whoami):$(whoami) tls/
+```
+
+## Open your kibana.yml 
+```console
+nano kibana/config/kibana.yml
+```
+### Enter a 32 length random number in your kibana.yml ie.
+```
+xpack.encryptedSavedObjects.encryptionKey: b9JMQusyZEshj8AmcYBad5wY9VHEz56u
 ```
